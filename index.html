@@ -34,7 +34,9 @@ input[type="number"] {
     text-align: center;
 }
 
-/* ✅ NOVÁ POLE */
+/* =========================
+   NOVÁ VSTUPNÍ POLE
+   ========================= */
 input[type="text"] {
     width: 100%;
     padding: 8px;
@@ -79,6 +81,7 @@ button:hover {
 
     <!-- =========================
          NOVÁ POVINNÁ POLE
+         (JMÉNO + TELEFON)
          ========================= -->
     <div style="margin-top:20px;">
         <label>VAŠE JMÉNO:</label>
@@ -89,7 +92,7 @@ button:hover {
     </div>
 
     <!-- =========================
-         TLAČÍTKO
+         TLAČÍTKO OBJEDNÁVKY
          ========================= -->
     <button onclick="odeslatObjednavku()">ODESLAT OBJEDNÁVKU</button>
 
@@ -215,16 +218,16 @@ function odeslatObjednavku() {
     text += "\nCelkem: " + celkem + " Kč";
 
     /* =========================
-       MAILTO FUNKCE
+       MAILTO FUNKCE (HLAVNÍ ČÁST)
        ========================= */
-    const email = "machalek.roman@kostka-skola.cz";
+    const email = "psikova.katerina@kostka-skola.cz";  // ✅ ZMĚNĚNÝ EMAIL
     const subject = encodeURIComponent("Objednávka bufet");
     const body = encodeURIComponent(text);
 
     window.location.href = `mailto:${email}?subject=${subject}&body=${body}`;
 }
 
-/* start aplikace */
+/* START */
 loadCSV();
 
 </script>
